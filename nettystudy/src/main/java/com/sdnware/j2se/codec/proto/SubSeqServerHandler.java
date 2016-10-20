@@ -16,7 +16,7 @@ public class SubSeqServerHandler extends ChannelHandlerAdapter {
 	private SubscribeRespProto.SubscribeResp resp(int subReqID) {
 		SubscribeRespProto.SubscribeResp.Builder resp = SubscribeRespProto.SubscribeResp.newBuilder();
 		resp.setSubReqID(subReqID);
-		resp.setRespCode(0);
+		resp.setRespCode(200);
 		resp.setDesc("Heee");
 		return resp.build();
 	}
