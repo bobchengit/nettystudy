@@ -1,4 +1,4 @@
-package com.sdnware.j2se.netty;
+package com.sdnware.j2se.netty.$1;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;

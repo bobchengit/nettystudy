@@ -1,4 +1,4 @@
-package com.sdnware.j2se.netty;
+package com.sdnware.j2se.netty.$1;
 
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.socket.SocketChannel;
