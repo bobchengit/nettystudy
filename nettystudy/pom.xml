@@ -48,8 +48,13 @@
 	    <artifactId>jboss-marshalling-serial</artifactId>
 	    <version>1.4.11.Final</version>
 	</dependency>
-	
-	
+
+	<!-- https://mvnrepository.com/artifact/org.jibx/jibx-bind -->
+	<dependency>
+	    <groupId>org.jibx</groupId>
+	    <artifactId>jibx-bind</artifactId>
+	    <version>1.2.6</version>
+	</dependency>
 	
   </dependencies>
 </project>
