@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================== 
+     2016年10月23日 下午12:29:09                                                        
+
+     project    
+     description
+                   
+     chenb.bob                                                                
+     ====================================================================== -->
+<project name="project" default="default" xmlns:artifact="antlib:org.apache.maven.artifact.ant">
+    <description>
+            description
+    </description>
+	
+	 
+	
+	 
+	
+	
+	
+    <!-- ================================= 
+          target: default              
+         ================================= -->
+    <target name="default" depends="depends" description="description">
+    	
+    	<property name="M2_REPO" value="C:/Users/chenb.bob/.m2/repository"></property>
+    	
+    	<echo message="init maven config. local repository is: ${M2_REPO}"/>  
+    	
+    	<typedef resource="org/apache/maven/artifact/ant/antlib.xml"   uri ="urn:maven-artifact-ant" /> 
+    		
+    	<artifact:localRepository id="local.repository" path="${M2_REPO}" />
+
+		<artifact:pom id="maven.project" file="pom.xml" />  
+		
+		<artifact:dependencies id="classpath.build" pathId="classpath.build" filesetid="maven.fileset.build" useScope="compile">  
+		            <localRepository refid="local.repository"></localRepository>
+		            <pom refid="maven.project" />  
+		 </artifact:dependencies> 
+    	
+    	 <echo message="Running BindGen tool"/>
+    		
+    	    <java fork="true" failonerror="true"
+    	        classname="org.jibx.binding.BindingGenerator" classpathref="classpath.build">
+    	    	<sysproperty key="file.encoding" value="UTF-8" /> 
+    	    	<classpath path="target/classes"></classpath>
+    	    	
+    	      	<arg value="com.sdnware.j2se.jibx.Order"/>
+
+    	    	
+    	    </java>
+    </target>
+
+    <!-- - - - - - - - - - - - - - - - - - 
+          target: depends                      
+         - - - - - - - - - - - - - - - - - -->
+    <target name="depends">
+    </target>
+
+</project>
